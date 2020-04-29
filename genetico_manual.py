@@ -6,7 +6,7 @@ largoIndividuo=10  # Número de elementos del vector
 num = 10  # Cantidad de individuos
 generaciones = 100  # Generaciones
 seleccion_individuos = 3  # Individuos>2
-mutacion_probabilidad = 0.2
+mutacion_probabilidad = 0.5
 
 def individuo(min, max):
     """ Creacion de un individuo
