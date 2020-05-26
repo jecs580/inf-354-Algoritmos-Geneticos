@@ -197,14 +197,18 @@ class Main:
         for i in range(self.filas):
             self.parejas.append(self.poblacion[i][0])
         self.parejas.reverse()
-        print("Seleccion de Parejas test: ", self.parejas)
+        # self.parejas[(self.filas-1)-i] = self.poblacion[i][0]
+
+        # print("Seleccion de Parejas test: ", self.parejas)
 
     def adaptabilidad(self):
         aux = []
         for i in range(self.filas):
-            aux = self.poblacion[i][:]
-            aux.append(str(float(self.poblacion[i][3])/self.sumatoria))
-            self.poblacion[i] = aux
+            # aux = self.poblacion[i][:]
+            # aux.append(str(float(self.poblacion[i][3])/self.sumatoria))
+            # self.poblacion[i] = aux
+            self.poblacion[i][4] = str(
+                float(self.poblacion[i][3])/self.sumatoria)
 
     def ver_poblacion(self, _poblacion, pareja):
         print("***************** Poblacion Actual *********************")
@@ -268,6 +272,8 @@ if __name__ == "__main__":
         adaptados = c.calidad_individuo()
         c.adaptabilidad()
         c.ver_poblacion(c.poblacion, True)
+        print("Numero elementos de parejas", len(c.parejas))
+        print("Numero elementos de poblacion", len(c.poblacion))
         c.seleccion_parejas()
         c.torneo()
         c.ver_ganadores()
