@@ -32,9 +32,11 @@ class Main:
             aux = []
             for j in range(self.nGenes):
                 individuo += str(r.randint(0, 1))+","
-            aux.append(str(i))
-            aux.append(individuo)
-            self.poblacion.append(aux)
+            # aux.append(str(i))
+            # aux.append(individuo)
+            # self.poblacion.append(aux)
+            self.poblacion[i][0] = str(i)
+            self.poblacion[i][1] = str(individuo)
 
     def convertir_individuo(self):
         valorInteger = 0
@@ -106,8 +108,10 @@ class Main:
             print(cadAdn)
             print("******************* Nuevo Individuo " +
                   cadAdn + "*******************")
-            aux = [i, cadAdn]
-            self.poblacionTemp.append(aux)
+            # aux = [i, cadAdn]
+            # self.poblacionTemp.append(aux)
+            self.poblacionTemp[i][0] = str(i)
+            self.poblacionTemp[i][1] = cadAdn
         print("Tamaño de  poblacion temporal", len(self.poblacionTemp))
         print("Tamaño del vector de parejas", len(self.parejas))
         for i in range(len(self.parejas)):
